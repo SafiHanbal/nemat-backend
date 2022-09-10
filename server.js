@@ -12,7 +12,9 @@ const DB = process.env.DATABASE_URI.replace(
 );
 
 mongoose
-  .connect(DB, {})
+  .connect(DB, {
+    useNewUrlParser: true,
+  })
   .then(() => console.log('DB connection successful!'))
   .catch((err) => console.log(err.message));
 
