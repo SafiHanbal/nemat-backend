@@ -1,4 +1,6 @@
+const path = require('path');
 const express = require('express');
+const morgan = require('morgan');
 
 const menuRouter = require('./routes/menu.route');
 const userRouter = require('./routes/user.route');
@@ -6,6 +8,10 @@ const reviewRouter = require('./routes/review.route');
 const bookingRouter = require('./routes/booking.route');
 
 const app = express();
+
+if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
+
+app.use(express.static());
 
 app.use(express.json());
 

@@ -1,0 +1,8 @@
+{
+  "name": "Murg Multani Shorba",
+  "description": "Fragrant chicken broth, an Awadhi signature recipe.",
+  "price": 249,
+  "image": "murg-multani-shorba.jpg",
+  "category": "main-course",
+  "isNonVeg": true
+}

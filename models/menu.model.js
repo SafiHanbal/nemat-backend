@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const menuSchema = new mongoose.Schema({
   name: {
@@ -11,6 +12,7 @@ const menuSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide a short description about menu item!'],
   },
+  slug: String,
   price: {
     type: Number,
     required: [true, 'Please provide a price for menu item!'],
@@ -32,7 +34,7 @@ const menuSchema = new mongoose.Schema({
   category: {
     type: String,
     enum: {
-      values: ['starter', 'main-course', 'desert'],
+      values: ['starter', 'main-course', 'bread', 'rice', 'desert'],
       message: 'Please specify menu item as starter, main-course or desert!',
     },
     required: [true, 'Please provide a category for menu item!'],
@@ -51,6 +53,11 @@ const menuSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+});
+
+menuSchema.pre('save', function (next) {
+  this.slug = slugify(this.name.toLowerCase());
+  next();
 });
 
 const Menu = mongoose.model('Menu', menuSchema);
