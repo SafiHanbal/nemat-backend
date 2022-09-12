@@ -1,8 +1,524 @@
-{
-  "name": "Murg Multani Shorba",
-  "description": "Fragrant chicken broth, an Awadhi signature recipe.",
-  "price": 249,
-  "image": "murg-multani-shorba.jpg",
-  "category": "main-course",
-  "isNonVeg": true
-}
+[
+  {
+    "name": "Rann e Darbaar",
+    "description": "Whole Leg of Spring Lamb (Approx. 2,5 kg - 3k, g) with Sela Basmati Rice cooked with lamb bone stock in saffron & other spices",
+    "price": 899,
+    "servings": 5,
+    "image": "http://127.0.0.1:8000/images/menu/rann-e-darbaar.jpg",
+    "category": "main-course",
+    "isNonVeg": true,
+    "isSpecial": true
+  },
+  {
+    "name": "Dumba Biryani",
+    "description": "Whole Baby Lamb (Approx. -8kg - 10 kg) stuffed with Poisson Chicken, stuffed with chicken mince & with Eggs In Biryani Rice",
+    "price": 1299,
+    "servings": 12,
+    "image": "http://127.0.0.1:8000/images/menu/dumba-biryani.jpg",
+    "category": "main-course",
+    "isNonVeg": true,
+    "isSpecial": true
+  },
+  {
+    "name": "Nihari Handi",
+    "description": "Whole Lamb Shanks on cooked overnight In Special Vessels",
+    "price": 599,
+    "servings": 6,
+    "image": "http://127.0.0.1:8000/images/menu/nihari-handi.jpg",
+    "category": "main-course",
+    "isNonVeg": true,
+    "isSpecial": true
+  },
+  {
+    "name": "Charsi Kadhai",
+    "description": "Spring Lamb cooked In Kadhai In Onion & Tomato",
+    "price": 799,
+    "servings": 7,
+    "image": "http://127.0.0.1:8000/images/menu/charsi-kadhai.jpg",
+    "category": "main-course",
+    "isNonVeg": true,
+    "isSpecial": true
+  },
+  {
+    "name": "Gosht Yakhani Pulao",
+    "description": "On the Bone Lamb Rice",
+    "price": 449,
+    "servings": 5,
+    "image": "http://127.0.0.1:8000/images/menu/gosht-yakhani-pulao.jpg",
+    "category": "main-course",
+    "isNonVeg": true,
+    "isSpecial": true
+  },
+  {
+    "name": "Kacche Gosht Ke Biryani",
+    "description": "Raw Lamb on the Bone Marinated with Whole Garam Masala, Ginger And Creamy Yogurt Infused with Saffron and Cooked in A Sealed Pot",
+    "price": 849,
+    "servings": 7,
+    "image": "http://127.0.0.1:8000/images/menu/kacche-gosht-ke-biryani.jpg",
+    "category": "main-course",
+    "isNonVeg": true,
+    "isSpecial": true
+  },
+  {
+    "name": "Tandoori Bharwan Aloo",
+    "description": "A stuffed Potato Kebab Cooked in Charcoal Tandoor filled with melted cheese & broken nuts, coated with sesame seeds Served in Mint flavoured chutney",
+    "price": 79,
+    "image": "http://127.0.0.1:8000/images/menu/tandoori-bharwan-aloo.jpg",
+    "category": "starter",
+    "isNonVeg": false
+  },
+  {
+    "name": "Badami Kabab",
+    "description": "Fried Patties made with a mix of Beetroot, Cheese & Potato & Almond coating",
+    "price": 99,
+    "image": "http://127.0.0.1:8000/images/menu/badami-kabab.jpg",
+    "category": "starter",
+    "isNonVeg": false
+  },
+  {
+    "name": "Sabz Kebab",
+    "description": "Fried kebab coated with Vermicelli, stuffed vegetable & Cottage Cheese and Indian herbs & hint of saffron flavour",
+    "price": 79,
+    "image": "http://127.0.0.1:8000/images/menu/sabz-kebab.jpg",
+    "category": "starter",
+    "isNonVeg": false
+  },
+  {
+    "name": "Achari Paneer Tikka Shaslik",
+    "description": "Our Home-Made Cottage Cheese Marinated in Sharp Mustard and Achari Hung Yogurt Cooked with Peppers and Red Onions on Skewers",
+    "price": 69,
+    "image": "http://127.0.0.1:8000/images/menu/achari-paneer-tikka-shaslik.jpg",
+    "category": "starter",
+    "isNonVeg": false
+  },
+  {
+    "name": "Gobi Surkh Angara",
+    "description": "A Mughlai Classic yogurt marinated Cauliflower in Secret Golden Masala Cooked in Tandoor",
+    "price": 69,
+    "image": "http://127.0.0.1:8000/images/menu/gobi-surkh-angara.jpg",
+    "category": "starter",
+    "isNonVeg": false
+  },
+  {
+    "name": "Gilafi Seekh Kebab ",
+    "description": "Skewered Fine Minced Lamb Kebabs Infused with Hand Pounded Spices, Fresh Coriander and Peppers",
+    "price": 89,
+    "image": "http://127.0.0.1:8000/images/menu/gilafi-seekh-kebab.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Kakori Kebab",
+    "description": "One of the most famous Mughlai dishes of from the district of Kakori near Lucknow, the softest Lamb Kebab which melts in mouth",
+    "price": 99,
+    "image": "http://127.0.0.1:8000/images/menu/kakori-kebab.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Gawluiti Kebab",
+    "description": "Another famous Mughlai dish from Lucknow, the Lamb Kebab, a mix of Indian spices like coriander, black cardamom, mace & nutmeg",
+    "price": 119,
+    "image": "http://127.0.0.1:8000/images/menu/gawluiti-kebab.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Kundan Gosht Ke Tikka",
+    "description": "Boti Kabab Is chunk of lamb) meat) that are soaked In a mixture of yogurt, garlic, chillies papaya, & spices such as garam masala & Cumin",
+    "price": 109,
+    "image": "http://127.0.0.1:8000/images/menu/kundan-gosht-ke-tikka.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Sikandari Chappe",
+    "description": "Lamb chops marinated with cumin, fennel, Hung Curd, Ginger & Coriander roots",
+    "price": 109,
+    "image": "http://127.0.0.1:8000/images/menu/sikandari-chappe.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Chicken Tikka",
+    "description": "A Classic Dish with Authentic Recipe, Chicken Marinated in Thick Hung Curd Flavoured Overnight in Himalayan Pink Salt, Raw Mustard Oil",
+    "price": 99,
+    "image": "http://127.0.0.1:8000/images/menu/chicken-tikka.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Hara Murg Tikka",
+    "description": "Chicken marinated in Spinach & Mint flavours and cooked in Chargrilled Tandoor",
+    "price": 89,
+    "image": "http://127.0.0.1:8000/images/menu/hara-murg-tikka.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Murg Zaffrani Tikka",
+    "description": "Charcoaled, Soft Chicken, marinated overnight In Saffron, Kashmiri Chilli, Golden coloured Indian Spices.",
+    "price": 139,
+    "image": "http://127.0.0.1:8000/images/menu/murg-zaffrani-tikka.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Tandoori Murg",
+    "description": "Half Chicken on The Bone, Marinated in Thick Hung Curd Flavoured with Himalayan Pink Salt, Raw Mustard Oil & Kashmiri Chilli and Then Cooked in Tandoor for That Chargrilled Flavour.",
+    "price": 149,
+    "image": "http://127.0.0.1:8000/images/menu/tandoori-murg.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Chingari Jhinga",
+    "description": "Spicy and Aromatic Prawns Marinated in Yogurt with Carom Seeds. Cooked on A Charcoal.",
+    "price": 99,
+    "image": "http://127.0.0.1:8000/images/menu/chingari-jhinga.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Amritsari Fish",
+    "description": "A Treat from Amritsar, Punjab. A Deep-Fried Carom Flavoured Fish With Crispy Batter Coating",
+    "price": 79,
+    "image": "http://127.0.0.1:8000/images/menu/amritsari-fish.jpg",
+    "category": "starter",
+    "isNonVeg": true
+  },
+  {
+    "name": "Gobi Musallam",
+    "description": "Whole Gobi on cooked on a slow heat, Floated with Minced jackfruit, Tomatoes, Cashewnut, Poppy seeds, Brown Onions, Pine Nuts garnished with Pistachio covered with Rich Gravy. ",
+    "price": 189,
+    "image": "http://127.0.0.1:8000/images/menu/gobi-musallam.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Hyderabadi Baghare Baingan",
+    "description": "An Authentic Recipe Made with Deep Fried Eggplants and Simmered In A Gravy Made with Peanut and Sesame",
+    "price": 179,
+    "image": "http://127.0.0.1:8000/images/menu/hyderabadi-baghare-baingan.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Malai Kofta",
+    "description": "Soft Cheese Dumplings Cooked in A Rich Onion, Saffron and Cashewnut Gravy",
+    "price": 149,
+    "image": "http://127.0.0.1:8000/images/menu/malai-kofta.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Banarasi Bhindi",
+    "description": "Traditional Lady Finger Recipe Cooked in A Chop Masala and Indian Spices",
+    "price": 189,
+    "image": "http://127.0.0.1:8000/images/menu/banarasi-bhindi.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Methi Mutter Malai",
+    "description": "Delicious North Indian Curry made with fenugreek Leaves, Peas, Cashewnut and Cream",
+    "price": 199,
+    "image": "http://127.0.0.1:8000/images/menu/methi-mutter-malai.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Sabz Miloni",
+    "description": "A medley of Mixed Vegetables, cooked with aromatic spices",
+    "price": 154,
+    "image": "http://127.0.0.1:8000/images/menu/sabz-miloni.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Palak Paneer",
+    "description": "Home Made Cottage Cheese Cooked with Spinach, Tempered With Whole Kashmiri Chilli, Butter and Roasted Garlic",
+    "price": 174,
+    "image": "http://127.0.0.1:8000/images/menu/palak-paneer.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Paneer Tikka Masala",
+    "description": "Indian cottage cheese Marinated In thick Hung Curd, Flavoured Overnight In Raw Mustard & Kashmiri chilli and then cooked In Tandoor in Makhani gravy",
+    "price": 219,
+    "image": "http://127.0.0.1:8000/images/menu/paneer-tikka-masala.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Paneer Makhani",
+    "description": "A Rich Tomato & Cashewnut gravy with Soft Paneer cooked on slow heat",
+    "price": 169,
+    "image": "http://127.0.0.1:8000/images/menu/paneer-makhani.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Murg Musallam",
+    "description": "Whole Chicken on the Bone cooked on a slow heat, Stuffed with Chicken Mince, whole Quail Egg Tomatoes, Cashewnut, Poppy seeds, Brown Onions, Pine Nuts garnished with Pistachio covered with Rich Gravy",
+    "price": 289,
+    "image": "http://127.0.0.1:8000/images/menu/murg-musallam.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Murg Makhani",
+    "description": "A Recipe Un Touched from Decades, A Rich Tomato and Cashew Nut Gravy With Soft Juicy Morsels of Chicken Tikka Cooked on A Slow Heat",
+    "price": 249,
+    "image": "http://127.0.0.1:8000/images/menu/murg-makhani.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Chicken Changezi",
+    "description": "A Kings Choice Chicken Cooked in Coarse Masala and Red Chillies Flavoured with Aromatic Spices",
+    "price": 209,
+    "image": "http://127.0.0.1:8000/images/menu/chicken-changezi.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Raan E Murgh",
+    "description": "On the Bone Chicken with Leg Pieces, a deliciously from the Awadh region, dish marinated in cashew & slow cooked",
+    "price": 189,
+    "image": "http://127.0.0.1:8000/images/menu/raan-e-murgh.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Chicken Tikka Masala",
+    "description": "A British version of Chicken Marinated in Thick Hung Curd, flavoured In mustard oil & then cooked in tandoor for that chargrilled flavour",
+    "price": 214,
+    "image": "http://127.0.0.1:8000/images/menu/chicken-tikka-masala.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Lamb Rogan Josh",
+    "description": "Rogan Josh consists of pieces of lamb braised with gravy flavoured with garlic, ginger & aromatic spices the dish may be finished using the Dampokhtak (slow cooking technique)",
+    "price": 234,
+    "image": "http://127.0.0.1:8000/images/menu/lamb-rogan-josh.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Rada Lamb",
+    "description": "Rada Is A Very Unique Lamb Recipe as It Combines the Cooking of Lamb Pieces Along with The Lamb Keema With Special Blend of Spices.",
+    "price": 249,
+    "image": "http://127.0.0.1:8000/images/menu/rada-lamb.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Nalli Nihari",
+    "description": "Spring Lamb chunks simmer in spicy broth of tomatoes, chillies, Onions, Kasoori Methi, & host of spices.",
+    "price": 214,
+    "image": "http://127.0.0.1:8000/images/menu/nalli-nihari.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Mahi Kadhai",
+    "description": "A fish cooked in nutty sauce; brown onions simmered In Mughlai flavours.",
+    "price": 179,
+    "image": "http://127.0.0.1:8000/images/menu/mahi-kadhai.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Kadhai Jhinga",
+    "description": "A Spicy and Tangy Recipe. Made with Chillies, Coconut and Vinegar. & flavoured with Mustard seeds",
+    "price": 199,
+    "image": "http://127.0.0.1:8000/images/menu/kadhai-jhinga.jpg",
+    "category": "main-course",
+    "isNonVeg": true
+  },
+  {
+    "name": "Dal Bukhara",
+    "description": "Delhi Darbaar Special - Whole Black Lentils, Tomatoes and Spices Cooked For Hours Together on A Slow Heat on Tandoor. Finished with Kasoori Methi And Organic butter our Ghee",
+    "price": 154,
+    "image": "http://127.0.0.1:8000/images/menu/dal-bukhara.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Tadka Dal",
+    "description": "Yellow Lentil cooked with turmeric. Fresh Herbs & Sizzling Spices, finished with garlic & cumin tempering & a dollop of organic butter ",
+    "price": 164,
+    "image": "http://127.0.0.1:8000/images/menu/tadka-dal.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Dal Banjara",
+    "description": "A mix of dals black urid dal & channa dal with spices once extensively used Indian Gypsy`s (Banjara’s) making It a delicious choice",
+    "price": 164,
+    "image": "http://127.0.0.1:8000/images/menu/dal-banjara.jpg",
+    "category": "main-course",
+    "isNonVeg": false
+  },
+  {
+    "name": "Tarkari Dum Biryani ",
+    "description": "Saffron Rice Cooked with a Dum, On a Bed of Seasonal Vegetables Served with Caramelized Onions and Mint",
+    "price": 129,
+    "image": "http://127.0.0.1:8000/images/menu/tarkari-dum-biryani.jpg",
+    "category": "rice",
+    "isNonVeg": false
+  },
+  {
+    "name": "Awadhi Murg Biryani",
+    "description": "Chicken Cooked with Scented Yogurt in Layers with Saffron Rice, Ginger and Brown Onion. A recipe from Lucknow",
+    "price": 159,
+    "image": "http://127.0.0.1:8000/images/menu/awadhi-murg-biryani.jpg",
+    "category": "rice",
+    "isNonVeg": true
+  },
+  {
+    "name": "Gosht Ke Biryani",
+    "description": "Lamb on the Bone Marinated with Whole Garam Masala, Ginger And Creamy Yogurt Infused with Saffron and Cooked in A Sealed Pot",
+    "price": 114,
+    "image": "http://127.0.0.1:8000/images/menu/gosht-ke-biryani.jpg",
+    "category": "rice",
+    "isNonVeg": true
+  },
+  {
+    "name": "Saffron Pulao Rice",
+    "description": "Finest Quality Basmati Rice Tempered with Pure Ghee and Cumin",
+    "price": 69,
+    "image": "http://127.0.0.1:8000/images/menu/saffron-pulao-rice.jpg",
+    "category": "rice",
+    "isNonVeg": false
+  },
+  {
+    "name": "Safed Chawal",
+    "description": "Fluffy Steam Cooked Basmati Rice",
+    "price": 39,
+    "image": "http://127.0.0.1:8000/images/menu/safed-chawal.jpg",
+    "category": "rice",
+    "isNonVeg": false
+  },
+  {
+    "name": "Raita",
+    "description": "Greek Yogurt Flavoured with Mint, Coriander, Roasted Cumin, Cucumber and Cherry Tomatoes",
+    "price": 39,
+    "image": "http://127.0.0.1:8000/images/menu/raita.jpg",
+    "category": "sides",
+    "isNonVeg": false
+  },
+  {
+    "name": "Papad",
+    "description": "Papad Fry or Roasted Served with Three Types of Chutneys",
+    "price": 29,
+    "image": "http://127.0.0.1:8000/images/menu/papad.jpg",
+    "category": "sides",
+    "isNonVeg": false
+  },
+  {
+    "name": "Mix Green Salad ",
+    "description": "Seasonal Vegetables and Salad Leaves Cut and Served with Green Chillies",
+    "price": 49,
+    "image": "http://127.0.0.1:8000/images/menu/mix-green-salad.jpg",
+    "category": "sides",
+    "isNonVeg": false
+  },
+  {
+    "name": "Roomali Roti",
+    "description": "Our Signature Artisan Bread Which Is Thin as a Roomal (Handkerchief) Cooked Over an Inverted Tawa A Must Have with Tandoori Dishes",
+    "price": 15,
+    "servings": 3,
+    "image": "http://127.0.0.1:8000/images/menu/roomali-roti.jpg",
+    "category": "bread",
+    "isNonVeg": false
+  },
+  {
+    "name": "Naan",
+    "description": "Soft Refined Flour Bread Cooked in Tandoor",
+    "price": 24,
+    "servings": 3,
+    "image": "http://127.0.0.1:8000/images/menu/naan.jpg",
+    "category": "bread",
+    "isNonVeg": false
+  },
+  {
+    "name": "Paneer Kulcha",
+    "description": "Stuffed Bread from Punjab Cooked in Tandoor Goes Best With Chickpea Curry /Palak Paneer",
+    "price": 30,
+    "servings": 3,
+    "image": "http://127.0.0.1:8000/images/menu/paneer-kulcha.jpg",
+    "category": "bread",
+    "isNonVeg": false
+  },
+  {
+    "name": "Laccha Paratha",
+    "description": "Layered Leavened Bread Made with Refined Bread Served with Butter",
+    "price": 30,
+    "servings": 3,
+    "image": "http://127.0.0.1:8000/images/menu/laccha-paratha.jpg",
+    "category": "bread",
+    "isNonVeg": false
+  },
+  {
+    "name": "Tandoori Roti",
+    "description": "Whole Wheat Flour Bread Cooked Inside the Walls of Tandoor Served with Or Without Butter Drizzle",
+    "price": 30,
+    "servings": 3,
+    "image": "http://127.0.0.1:8000/images/menu/tandori-roti.jpg",
+    "category": "bread",
+    "isNonVeg": false
+  },
+  {
+    "name": "Peshawari Naan",
+    "description": "Sweet naan bursting with flavours of raisins, pistachios, & desiccated coconut",
+    "price": 25,
+    "servings": 3,
+    "image": "http://127.0.0.1:8000/images/menu/peshawari-naan.jpg",
+    "category": "bread",
+    "isNonVeg": false
+  },
+  {
+    "name": "Rabdi",
+    "description": "Pistachio Rabdi Topped with Crushed Dry Fruits and Saffron",
+    "price": 49,
+    "image": "http://127.0.0.1:8000/images/menu/rabdi.jpg",
+    "category": "desert",
+    "isNonVeg": false
+  },
+  {
+    "name": "Shahi Tukda",
+    "description": "Homemade Shahi Tukda On A Bed of Rich Flavors",
+    "price": 49,
+    "image": "http://127.0.0.1:8000/images/menu/shahi-tukda.jpg",
+    "category": "desert",
+    "isNonVeg": false
+  },
+  {
+    "name": "Walnut Halwa",
+    "description": "A Must have Winter Homemade Walnut Halwa(cake) along with, A Rich Indian Version of Pistachio Ice Cream.",
+    "price": 54,
+    "image": "http://127.0.0.1:8000/images/menu/walnut-halwa.jpg",
+    "category": "desert",
+    "isNonVeg": false
+  },
+  {
+    "name": "Kesari Phirni",
+    "description": "A Dessert Made from Ground Rice and Reduced Milk Over A Low Heat and Flavoured with Saffron",
+    "price": 44,
+    "image": "http://127.0.0.1:8000/images/menu/kesari-phirni.jpg",
+    "category": "desert",
+    "isNonVeg": false
+  },
+  {
+    "name": "Gajar Halwa",
+    "description": "Grated Carrots Cooked with Whole Milk, Sugar and Dry Fruits ",
+    "price": 64,
+    "image": "http://127.0.0.1:8000/images/menu/gajar-halwa.jpg",
+    "category": "desert",
+    "isNonVeg": false
+  }
+]

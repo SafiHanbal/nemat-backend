@@ -3,9 +3,12 @@ const AppError = require('../utils/app-error');
 const Menu = require('../models/menu.model');
 
 exports.getMenu = catchAsync(async (req, res, next) => {
+  const menu = await Menu.find();
   res.status(200).json({
     status: 'success',
-    message: 'Menu route is working!',
+    data: {
+      menu,
+    },
   });
 });
 
@@ -19,5 +22,15 @@ exports.createMenuItem = catchAsync(async (req, res, next) => {
     data: {
       menuItem,
     },
+  });
+});
+
+exports.getMenuItem = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+  // console.log(params);
+  const menuItem = await Menu.findById(id);
+  res.status(200).json({
+    status: 'success',
+    menuItem,
   });
 });

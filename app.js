@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 
 const menuRouter = require('./routes/menu.route');
 const userRouter = require('./routes/user.route');
@@ -11,9 +12,10 @@ const app = express();
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-app.use(express.static());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/v1/menu', menuRouter);
 app.use('/api/v1/user', userRouter);

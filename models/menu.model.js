@@ -11,6 +11,7 @@ const menuSchema = new mongoose.Schema({
   description: {
     type: String,
     required: [true, 'Please provide a short description about menu item!'],
+    trim: true,
   },
   slug: String,
   price: {
@@ -23,7 +24,7 @@ const menuSchema = new mongoose.Schema({
       validator: function (value) {
         return `${value}`.split('.')[1] ? false : true;
       },
-      message: 'Servings should not be decimal!',
+      message: 'Servings should not be a decimal!',
     },
     default: 1,
   },
@@ -34,7 +35,7 @@ const menuSchema = new mongoose.Schema({
   category: {
     type: String,
     enum: {
-      values: ['starter', 'main-course', 'bread', 'rice', 'desert'],
+      values: ['starter', 'main-course', 'bread', 'rice', 'sides', 'desert'],
       message: 'Please specify menu item as starter, main-course or desert!',
     },
     required: [true, 'Please provide a category for menu item!'],
@@ -42,6 +43,10 @@ const menuSchema = new mongoose.Schema({
   isNonVeg: {
     type: Boolean,
     required: [true, 'Please specify is menu item is non-vegetarian!'],
+  },
+  isSpecial: {
+    type: Boolean,
+    default: false,
   },
   ratingsAverage: {
     type: Number,
