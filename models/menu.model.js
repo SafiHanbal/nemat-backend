@@ -36,7 +36,8 @@ const menuSchema = new mongoose.Schema({
     type: String,
     enum: {
       values: ['starter', 'main-course', 'bread', 'rice', 'sides', 'desert'],
-      message: 'Please specify menu item as starter, main-course or desert!',
+      message:
+        'Please specify menu item as starter, main-course, bread, rice, sides or desert!',
     },
     required: [true, 'Please provide a category for menu item!'],
   },

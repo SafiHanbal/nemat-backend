@@ -7,6 +7,7 @@ const menuRouter = require('./routes/menu.route');
 const userRouter = require('./routes/user.route');
 const reviewRouter = require('./routes/review.route');
 const bookingRouter = require('./routes/booking.route');
+const globalErrorHandler = require('./controllers/error.controller');
 
 const app = express();
 
@@ -30,5 +31,7 @@ app.use('*', (req, res, next) => {
     message,
   });
 });
+
+app.use(globalErrorHandler);
 
 module.exports = app;
