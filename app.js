@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const menuRouter = require('./routes/menu.route');
 const userRouter = require('./routes/user.route');
@@ -10,6 +11,8 @@ const bookingRouter = require('./routes/booking.route');
 const globalErrorHandler = require('./controllers/error.controller');
 
 const app = express();
+
+app.use(cookieParser());
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 

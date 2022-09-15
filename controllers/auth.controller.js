@@ -16,9 +16,8 @@ const createAndSendToken = (user, statusCode, res) => {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
-    // httpOnly: true,
+    httpOnly: true,
   };
-  if (process.env.NODE_ENV === 'development') cookieOptions.secure = true;
 
   res.cookie('jwt', token, cookieOptions);
 
@@ -66,14 +65,29 @@ exports.login = catchAsync(async (req, res, next) => {
   createAndSendToken(user, 200, res);
 });
 
+exports.logout = (req, res) => {
+  const cookieOptions = {
+    expires: new Date(Date.now() + 1000),
+    httpOnly: true,
+  };
+
+  res.cookie('jwt', 'loggedout', cookieOptions);
+  res.status(200).json({
+    status: 'success',
+    message: 'You are logged out successfully!',
+  });
+};
+
 exports.protect = catchAsync(async (req, res, next) => {
   let token;
 
   if (
-    req.headers.authorization ||
+    req.headers.authorization &&
     req.headers.authorization.startsWith('Bearer')
   ) {
     token = req.headers.authorization.split(' ')[1];
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
   }
 
   if (!token)
@@ -90,9 +104,7 @@ exports.protect = catchAsync(async (req, res, next) => {
       new AppError('User associated to this token does no longer exists.', 401)
     );
 
-  console.log(decoded.iat);
-
-  if (user.changedPasswordAfter(decode.iat))
+  if (user.changedPasswordAfter(decoded.iat))
     return next(
       new AppError('User recently changed password. Please log in again!', 401)
     );
@@ -120,14 +132,16 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
       new AppError('User related to this number does not exists!', 400)
     );
 
-  const OTP = user.createPasswordResetToken();
+  const otp = user.createOTP();
   await user.save({ validateBeforeSave: false });
 
-  const message = await sendOTP(phone, OTP);
-  if (!message)
+  try {
+    await sendOTP(phone, otp);
+  } catch (err) {
     return next(
       new AppError('Unable to send OTP. Please try again later', 500)
     );
+  }
 
   res.status(200).json({
     status: 'success',
@@ -150,8 +164,23 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   user.passwordConfirm = req.body.passwordConfirm;
   user.passwordResetToken = undefined;
   user.passwordResetExpires = undefined;
-  user.changedPasswordAt = Date.now();
   user.save();
 
+  createAndSendToken(user, 200, res);
+});
+
+exports.updatePassword = catchAsync(async (req, res, next) => {
+  const { password, passwordConfirm, passwordCurrent } = req.body;
+
+  const user = await User.findById(req.user.id).select('+password');
+
+  if (!(await user.correctPassword(passwordCurrent, user.password)))
+    return next(new AppError('Your current password does not match', 400));
+
+  user.password = password;
+  user.passwordConfirm = passwordConfirm;
+  console.log(1);
+  await user.save();
+  console.log(2);
   createAndSendToken(user, 200, res);
 });

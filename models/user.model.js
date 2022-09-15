@@ -84,7 +84,7 @@ userSchema.pre('save', function (next) {
   if (!this.isModified || this.isNew) return next();
 
   this.changedPasswordAt = Date.now() - 1000;
-  next;
+  next();
 });
 
 userSchema.pre(/^find/, function (next) {
@@ -110,7 +110,7 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   return false;
 };
 
-userSchema.methods.createPasswordResetToken = function () {
+userSchema.methods.createOTP = function () {
   const OTP = `${Math.round(Math.random() * 1000000)}`;
   this.passwordResetToken = crypto
     .createHash('sha256')

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 const Menu = require('../../models/menu.model');
+const User = require('../../models/user.model');
 
 dotenv.config({ path: `./config.env` });
 
@@ -24,10 +25,19 @@ const menuData = JSON.parse(
   })
 );
 
+const userData = JSON.parse(
+  fs.readFileSync('./dev-data/data/user.json', {
+    encoding: 'utf-8',
+  })
+);
+
 const importDataToDB = async () => {
   try {
     const menu = await Menu.create(menuData);
-    if (menu) console.log('Data imported successfully!');
+    const user = await User.create(userData, { validateBeforeSave: false });
+
+    if (menu) console.log('Menu data imported successfully!');
+    if (user) console.log('User data imported successfully!');
   } catch (err) {
     console.log(err.message, err);
   }
@@ -37,7 +47,10 @@ const importDataToDB = async () => {
 const deleteDataFromDB = async () => {
   try {
     await Menu.deleteMany();
-    console.log('Data deleted successfully!');
+    await User.deleteMany();
+
+    console.log('Menu data deleted successfully!');
+    console.log('User data deleted successfully!');
   } catch (err) {
     console.log(err.message, err);
   }
