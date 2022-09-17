@@ -1,4 +1,5 @@
 const express = require('express');
+const reviewRouter = require('../routes/review.route');
 const {
   getMenu,
   createMenuItem,
@@ -10,10 +11,11 @@ const {
 
 const router = express.Router();
 
+router.use('/:menuItemId/review', reviewRouter);
+
 router.route('/special-deals').get(getSpecialDeals);
 
 router.route('/').get(getMenu).post(createMenuItem);
-
 router
   .route('/:slug')
   .get(getMenuItem)

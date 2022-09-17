@@ -34,7 +34,7 @@ exports.createMenuItem = catchAsync(async (req, res, next) => {
 
 exports.getMenuItem = catchAsync(async (req, res, next) => {
   const { slug } = req.params;
-  const menuItem = await Menu.findOne({ slug });
+  const menuItem = await Menu.findOne({ slug }).populate('reviews');
 
   if (!menuItem) return next(new AppError('Unabale to find menu item', 404));
 

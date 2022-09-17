@@ -10,6 +10,7 @@
       "city": "Ajmer",
       "pinCode": 209943
     },
+    "role": "admin",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -23,6 +24,7 @@
       "city": "Warangal",
       "pinCode": 479399
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -36,6 +38,7 @@
       "city": "Mysore",
       "pinCode": 554285
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -49,6 +52,7 @@
       "city": "Srinagar",
       "pinCode": 326335
     },
+    "role": "staff",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -62,6 +66,7 @@
       "city": "Lucknow",
       "pinCode": 543365
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -75,6 +80,7 @@
       "city": "Ludhiana",
       "pinCode": 361351
     },
+    "role": "staff",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -88,6 +94,7 @@
       "city": "Thiruvananthapuram",
       "pinCode": 370875
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -101,6 +108,7 @@
       "city": "Ratlam",
       "pinCode": 277193
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -114,6 +122,7 @@
       "city": "Kolkata",
       "pinCode": 451848
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -127,6 +136,7 @@
       "city": "Bikaner",
       "pinCode": 550750
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -140,6 +150,7 @@
       "city": " Faridabad",
       "pinCode": 263545
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -153,6 +164,7 @@
       "city": "Vadodara",
       "pinCode": 372130
     },
+    "role": "staff",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -166,6 +178,7 @@
       "city": "Noida",
       "pinCode": 169499
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -179,6 +192,7 @@
       "city": "Gurgaon",
       "pinCode": 219096
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -192,6 +206,7 @@
       "city": "Faridabad",
       "pinCode": 515010
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -205,6 +220,7 @@
       "city": "Meerut",
       "pinCode": 436401
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -218,6 +234,7 @@
       "city": "Pilani",
       "pinCode": 488642
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -231,6 +248,7 @@
       "city": "Hyderabad",
       "pinCode": 242475
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -244,6 +262,7 @@
       "city": "Kanpur",
       "pinCode": 132594
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   },
   {
@@ -257,6 +276,7 @@
       "city": "Rajkot",
       "pinCode": 429426
     },
+    "role": "user",
     "password": "$2a$12$kD45AYLHdOfQLH3h/amzdOI3j3x/Mur./oB3/ysfI8ifWXQnDc40O"
   }
 ]
