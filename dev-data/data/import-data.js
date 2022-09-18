@@ -4,6 +4,8 @@ const dotenv = require('dotenv');
 
 const Menu = require('../../models/menu.model');
 const User = require('../../models/user.model');
+const Review = require('../../models/review.model');
+const Order = require('../../models/order.model');
 
 dotenv.config({ path: `./config.env` });
 
@@ -31,13 +33,29 @@ const userData = JSON.parse(
   })
 );
 
+const reviewData = JSON.parse(
+  fs.readFileSync('./dev-data/data/review.json', {
+    encoding: 'utf-8',
+  })
+);
+
+const orderData = JSON.parse(
+  fs.readFileSync('./dev-data/data/order.json', {
+    encoding: 'utf-8',
+  })
+);
+
 const importDataToDB = async () => {
   try {
     const menu = await Menu.create(menuData);
     const user = await User.create(userData, { validateBeforeSave: false });
+    const order = await Order.create(orderData);
+    const review = await Review.create(reviewData);
 
     if (menu) console.log('Menu data imported successfully!');
     if (user) console.log('User data imported successfully!');
+    if (order) console.log('Order data imported successfully!');
+    if (review) console.log('Review data imported successfully!');
   } catch (err) {
     console.log(err.message, err);
   }
@@ -48,9 +66,13 @@ const deleteDataFromDB = async () => {
   try {
     await Menu.deleteMany();
     await User.deleteMany();
+    await Order.deleteMany();
+    await Review.deleteMany();
 
     console.log('Menu data deleted successfully!');
     console.log('User data deleted successfully!');
+    console.log('Order data deleted successfully!');
+    console.log('Review data deleted successfully!');
   } catch (err) {
     console.log(err.message, err);
   }
