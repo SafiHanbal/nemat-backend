@@ -19,6 +19,11 @@ const orderSchema = new mongoose.Schema({
       },
     },
   ],
+  orderStatus: {
+    type: String,
+    enum: ['ordered', 'cooked', 'dispatched', 'dilivered'],
+    default: 'ordered',
+  },
   totalPrice: {
     type: Number,
     required: [true, 'Unable to get total Price!'],
