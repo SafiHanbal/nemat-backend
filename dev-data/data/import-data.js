@@ -21,41 +21,33 @@ mongoose
   .then(() => console.log('Connected to DB!'))
   .catch((err) => console.log(err.message));
 
-const menuData = JSON.parse(
-  fs.readFileSync('./dev-data/data/menu.json', {
-    encoding: 'utf-8',
-  })
-);
-
-const userData = JSON.parse(
-  fs.readFileSync('./dev-data/data/user.json', {
-    encoding: 'utf-8',
-  })
-);
-
-const reviewData = JSON.parse(
-  fs.readFileSync('./dev-data/data/review.json', {
-    encoding: 'utf-8',
-  })
-);
-
-const orderData = JSON.parse(
-  fs.readFileSync('./dev-data/data/order.json', {
-    encoding: 'utf-8',
-  })
-);
-
 const importDataToDB = async () => {
   try {
+    const menuData = JSON.parse(
+      fs.readFileSync('./dev-data/data/menu.json', {
+        encoding: 'utf-8',
+      })
+    );
+
+    const userData = JSON.parse(
+      fs.readFileSync('./dev-data/data/user.json', {
+        encoding: 'utf-8',
+      })
+    );
+
+    const orderData = JSON.parse(
+      fs.readFileSync('./dev-data/data/order.json', {
+        encoding: 'utf-8',
+      })
+    );
+
     const menu = await Menu.create(menuData);
     const user = await User.create(userData, { validateBeforeSave: false });
     const order = await Order.create(orderData);
-    const review = await Review.create(reviewData);
 
     if (menu) console.log('Menu data imported successfully!');
     if (user) console.log('User data imported successfully!');
     if (order) console.log('Order data imported successfully!');
-    if (review) console.log('Review data imported successfully!');
   } catch (err) {
     console.log(err.message, err);
   }
@@ -79,5 +71,20 @@ const deleteDataFromDB = async () => {
   process.exit();
 };
 
+const importReview = async () => {
+  try {
+    const reviewData = JSON.parse(
+      fs.readFileSync('./dev-data/data/review.json', {
+        encoding: 'utf-8',
+      })
+    );
+    const review = await Review.create(reviewData);
+    if (review) console.log('Review data imported successfully!');
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 if (process.argv[2] === '--import') importDataToDB();
 if (process.argv[2] === '--delete') deleteDataFromDB();
+if (process.argv[2] === '--importReview') importReview();
