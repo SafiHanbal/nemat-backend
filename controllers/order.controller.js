@@ -1,10 +1,16 @@
 const catchAsync = require('../utils/catch-async');
 const AppError = require('../utils/app-error');
+const APIFeatures = require('../utils/api-features');
 const Order = require('../models/order.model');
 const Menu = require('../models/menu.model');
 
 exports.getAllOrders = catchAsync(async (req, res, next) => {
-  const orders = await Order.find();
+  const orders = await new APIFeatures(Order.find(), req.query)
+    .filter()
+    .sort()
+    .limit()
+    .paginate().query;
+
   if (!orders) return next(new AppError('Unable to find orders!', 404));
 
   res.status(200).json({
