@@ -30,8 +30,8 @@ const menuSchema = new mongoose.Schema(
       default: 1,
     },
     image: {
-      type: String,
-      required: [true, 'Please provide an image for menu item!'],
+      small: String,
+      large: String,
     },
     category: {
       type: String,
