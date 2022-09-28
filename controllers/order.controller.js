@@ -11,7 +11,7 @@ exports.getAllOrders = catchAsync(async (req, res, next) => {
     .limit()
     .paginate().query;
 
-  if (!orders) return next(new AppError('Unable to find orders!', 404));
+  if (!orders) return next(new AppError('Orders not found!', 404));
 
   res.status(200).json({
     status: 'success',
@@ -49,7 +49,7 @@ exports.getOrder = catchAsync(async (req, res, next) => {
   const { id } = req.params;
   const order = await Order.findById(id);
   if (!order) {
-    return next(new AppError('Unable to find order', 404));
+    return next(new AppError('Order not found', 404));
   }
 
   res.status(200).json({

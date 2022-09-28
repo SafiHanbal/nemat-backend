@@ -11,7 +11,7 @@ exports.setTourUserIds = (req, res, next) => {
 exports.getAllReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find();
 
-  if (!reviews) return next(new AppError('Unable to find reviews', 404));
+  if (!reviews) return next(new AppError('Reviews not found!', 404));
 
   res.status(200).json({
     status: 'success',

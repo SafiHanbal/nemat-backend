@@ -30,7 +30,7 @@ exports.getUser = catchAsync(async (req, res, next) => {
   const { id } = req.params;
   const user = await User.findById(id);
   if (!user)
-    return next(new AppError('Unable to find user with this id!', 404));
+    return next(new AppError('User associated with this id not found!', 404));
 
   res.status(200).json({
     status: 'success',

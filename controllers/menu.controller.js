@@ -80,8 +80,7 @@ exports.getSpecialDeals = catchAsync(async (req, res, next) => {
     },
   ]);
 
-  if (!menuItems)
-    return next(new AppError('Unable to find special deals.', 404));
+  if (!menuItems) return next(new AppError('Special deals not found', 404));
 
   res.status(200).json({
     status: 'success',

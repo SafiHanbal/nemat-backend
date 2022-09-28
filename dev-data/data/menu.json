@@ -121,12 +121,12 @@
   },
   {
     "_id": "6326d920c47fe048c98e83b5",
-    "name": "Achari Paneer Tikka Shaslik",
+    "name": "Achari Paneer Tikka",
     "description": "Our Home-Made Cottage Cheese Marinated in Sharp Mustard and Achari Hung Yogurt Cooked with Peppers and Red Onions on Skewers",
     "price": 69,
     "image": {
-      "small": "https://nemat-hanbal.herokuapp.com/images/menu/achari-paneer-tikka-shaslik-small.jpg",
-      "large": "https://nemat-hanbal.herokuapp.com/images/menu/achari-paneer-tikka-shaslik-large.jpg"
+      "small": "https://nemat-hanbal.herokuapp.com/images/menu/achari-paneer-tikka-small.jpg",
+      "large": "https://nemat-hanbal.herokuapp.com/images/menu/achari-paneer-tikka-large.jpg"
     },
     "category": "starter",
     "isNonVeg": false
@@ -289,12 +289,12 @@
   },
   {
     "_id": "6326d920c47fe048c98e83c3",
-    "name": "Hyderabadi Baghare Baingan",
+    "name": "Baghare Baingan",
     "description": "An Authentic Recipe Made with Deep Fried Eggplants and Simmered In A Gravy Made with Peanut and Sesame",
     "price": 179,
     "image": {
-      "small": "https://nemat-hanbal.herokuapp.com/images/menu/hyderabadi-baghare-baingan-small.jpg",
-      "large": "https://nemat-hanbal.herokuapp.com/images/menu/hyderabadi-baghare-baingan-large.jpg"
+      "small": "https://nemat-hanbal.herokuapp.com/images/menu/baghare-baingan-small.jpg",
+      "large": "https://nemat-hanbal.herokuapp.com/images/menu/baghare-baingan-large.jpg"
     },
     "category": "main-course",
     "isNonVeg": false

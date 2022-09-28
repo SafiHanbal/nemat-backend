@@ -58,7 +58,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
   const user = await User.findOne({ phone }).select('+password');
 
-  if (!user) return next(new AppError('Unable to find user!', 404));
+  if (!user) return next(new AppError('User not found!', 404));
   if (!(await user.correctPassword(password, user.password)))
     return next(new AppError('Incorrect phone number or password!', 400));
 
