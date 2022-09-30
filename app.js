@@ -42,7 +42,7 @@ const limiter = rateLimit({
 
 app.use('/api', limiter);
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 
 app.use('/api/v1/menu', menuRouter);
 app.use('/api/v1/user', userRouter);
