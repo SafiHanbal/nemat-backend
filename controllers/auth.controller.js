@@ -21,6 +21,8 @@ const createAndSendToken = (user, statusCode, res) => {
     secure: true,
   };
 
+  // if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
+
   res.cookie('jwt', token, cookieOptions);
 
   res.status(statusCode).json({
@@ -33,8 +35,7 @@ const createAndSendToken = (user, statusCode, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
-  const { name, email, phone, address, password, passwordConfirm, photo } =
-    req.body;
+  const { name, email, phone, address, password, passwordConfirm } = req.body;
 
   const user = await User.create({
     name,
@@ -44,7 +45,6 @@ exports.signup = catchAsync(async (req, res, next) => {
     address,
     password,
     passwordConfirm,
-    photo,
   });
 
   if (!user)

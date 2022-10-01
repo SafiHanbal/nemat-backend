@@ -61,7 +61,7 @@ const userSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
-      default: 'photo.jpg',
+      default: 'http://127.0.0.1:8000/images/user/default.jpg',
     },
     changedPasswordAt: Date,
     passwordResetToken: String,

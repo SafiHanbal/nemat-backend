@@ -1,3 +1,5 @@
+const multer = require('multer');
+const sharp = require('sharp');
 const catchAsync = require('../utils/catch-async');
 const AppError = require('../utils/app-error');
 const User = require('../models/user.model');
@@ -11,6 +13,23 @@ const filterObj = (obj, ...allowedFields) => {
 
   return newObj;
 };
+
+const multerStorage = multer.memoryStorage();
+
+const multerFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith('image')) {
+    cb(null, true);
+  } else {
+    cb(new AppError('Not an image! Please upload only images.', 400), false);
+  }
+};
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter,
+});
+
+exports.updateUserPhoto = upload.single('photo');
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
   const users = await User.find();
@@ -45,17 +64,14 @@ exports.updateUser = catchAsync(async (req, res, next) => {
     return next(new AppError('This route is not for password update.', 400));
 
   const id = req.params.id || req.user.id;
-  const filteredBody = filterObj(
-    req.body,
-    'name',
-    'address',
-    'phone',
-    'email',
-    'photo'
-  );
+  const filteredBody = filterObj(req.body, 'name', 'address', 'phone', 'email');
+
+  if (req.file)
+    filteredBody.photo = `http://127.0.0.1:8000/images/user/${req.file.filename}`;
 
   const user = await User.findByIdAndUpdate(id, filteredBody, {
     new: true,
+    // runValidators: true,
   });
   if (!user) return next(new AppError('Unable to update user!', 400));
 
@@ -88,8 +104,34 @@ exports.getMe = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
+  if (!req.file) return next();
+
+  req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
+
+  await sharp(req.file.buffer)
+    .resize(500, 500)
+    .toFormat('jpeg')
+    .jpeg({ quality: 80 })
+    .toFile(`public/images/user/${req.file.filename}`);
+
+  next();
+});
+
 exports.updateMe = catchAsync(async (req, res, next) => {
-  req.user.id = req.user._id;
+  if (req.body.password || req.body.passwordConfirm) {
+    return next(
+      new AppError(
+        'This route is not defined to update password. Instead use /changeMyPassword route.',
+        400
+      )
+    );
+  }
+
+  // Parsing stringified address data received from Nested FormData Value
+  if (req.body.address) req.body.address = JSON.parse(req.body.address);
+
+  if (req.file) req.user.id = req.user._id;
   next();
 });
 

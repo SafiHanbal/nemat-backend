@@ -8,6 +8,8 @@ const {
   getUser,
   updateUser,
   deleteUser,
+  updateUserPhoto,
+  resizeUserPhoto,
 } = require('../controllers/user.controller');
 
 const {
@@ -34,7 +36,13 @@ router.use('/update-my-password', protect, updatePassword);
 router.use(protect);
 
 router.use('/get-me', getMe);
-router.use('/update-me', updateMe, updateUser);
+router.use(
+  '/update-me',
+  updateUserPhoto,
+  resizeUserPhoto,
+  updateMe,
+  updateUser
+);
 router.use('/delete-me', deleteMe);
 
 router.use(strictTo('admin'));
