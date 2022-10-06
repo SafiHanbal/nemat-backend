@@ -15,6 +15,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       price_data: {
         currency: 'inr',
         product_data: {
+          menuItem: item._id,
           name: item.name,
           images: [item.image.small],
         },
@@ -26,10 +27,11 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
   const session = await stripe.checkout.sessions.create({
     line_items: lineItemsArr,
+    customer_email: req.user.email,
     mode: 'payment',
     client_reference_id: req.user.id,
-    success_url: 'http://127.0.0.1:3000',
-    cancel_url: 'http://127.0.0.1:3000/menu',
+    success_url: 'https://nemat-hanbal.herokuapp.com/me/orders',
+    cancel_url: 'https://nemat-hanbal.herokuapp.com/menu',
   });
 
   res.status(200).json({
@@ -37,6 +39,48 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     session,
   });
 });
+
+exports.webhookCheckout = async (req, res, next) => {
+  let event;
+  // Get the signature sent by Stripe
+  const signature = request.headers['stripe-signature'];
+  try {
+    event = stripe.webhooks.constructEvent(
+      request.body,
+      signature,
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
+  } catch (err) {
+    return res.status(400).send(`Webhook error: ${err.message}`);
+  }
+
+  const ids = session.line_items.map(
+    (item) => item.price_data.product_data.menuItem
+  );
+  const quantityArr = session.line_items.map((item) => item.quantity);
+  const menuItems = await Menu.find({ _id: { $in: ids } });
+
+  let totalPrice = 0;
+  menuItems.forEach(
+    (item, i) => (totalPrice = totalPrice + item.price * quantityArr[i])
+  );
+
+  const user = session.client_reference_id;
+
+  const orderDbMenuItemArr = menuItems.map((item) => ({ menuItem: item._id }));
+
+  await Order.create({
+    menuItems: orderDbMenuItemArr,
+    user,
+    totalPrice,
+    paymentMethod: 'card',
+    orderedAt: Date.now(),
+  });
+
+  if (event.type === 'checkout.session.completed')
+    // Return a 200 response to acknowledge receipt of the event
+    response.send();
+};
 
 exports.getAllOrders = catchAsync(async (req, res, next) => {
   const orders = await new APIFeatures(Order.find(), req.query)
@@ -62,7 +106,7 @@ exports.createOrder = catchAsync(async (req, res, next) => {
   const ids = req.body.menuItems.map((item) => item.menuItem);
   const quantityArr = req.body.menuItems.map((item) => item.quantity);
   const menuItems = await Menu.find({ _id: { $in: ids } });
-  console.log(menuItems);
+
   let totalPrice = 0;
   menuItems.forEach(
     (item, i) => (totalPrice = totalPrice + item.price * quantityArr[i])
