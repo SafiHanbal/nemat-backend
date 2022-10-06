@@ -1,8 +1,42 @@
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const catchAsync = require('../utils/catch-async');
 const AppError = require('../utils/app-error');
 const APIFeatures = require('../utils/api-features');
 const Order = require('../models/order.model');
 const Menu = require('../models/menu.model');
+
+exports.getCheckoutSession = catchAsync(async (req, res, next) => {
+  const ids = req.body.menuItems.map((item) => item.id);
+  const quantities = req.body.menuItems.map((item) => item.quantity);
+  const menuItems = await Menu.find({ _id: { $in: ids } });
+
+  const lineItemsArr = menuItems.map((item, i) => {
+    return {
+      price_data: {
+        currency: 'inr',
+        product_data: {
+          name: item.name,
+          images: [item.image.small],
+        },
+        unit_amount: item.price * 100,
+      },
+      quantity: quantities[i],
+    };
+  });
+
+  const session = await stripe.checkout.sessions.create({
+    line_items: lineItemsArr,
+    mode: 'payment',
+    client_reference_id: req.user.id,
+    success_url: 'http://127.0.0.1:3000',
+    cancel_url: 'http://127.0.0.1:3000/menu',
+  });
+
+  res.status(200).json({
+    status: 'success',
+    session,
+  });
+});
 
 exports.getAllOrders = catchAsync(async (req, res, next) => {
   const orders = await new APIFeatures(Order.find(), req.query)
@@ -25,12 +59,13 @@ exports.createOrder = catchAsync(async (req, res, next) => {
   req.body.user = req.user._id;
 
   // Calculating total Price
-  const ids = req.body.menuItems.map((item) => item.id);
-  const priceArr = req.body.menuItems.map((item) => item.quantity);
+  const ids = req.body.menuItems.map((item) => item.menuItem);
+  const quantityArr = req.body.menuItems.map((item) => item.quantity);
   const menuItems = await Menu.find({ _id: { $in: ids } });
+  console.log(menuItems);
   let totalPrice = 0;
   menuItems.forEach(
-    (item, i) => (totalPrice = totalPrice + item.price * priceArr[i])
+    (item, i) => (totalPrice = totalPrice + item.price * quantityArr[i])
   );
   req.body.totalPrice = totalPrice;
 

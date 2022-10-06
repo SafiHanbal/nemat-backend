@@ -5,16 +5,16 @@ const {
   createOrder,
   getOrder,
   deleteOrder,
+  getCheckoutSession,
 } = require('../controllers/order.controller');
 
 const router = express.Router();
 
 router.use(protect);
 
-router
-  .route('/')
-  .get(strictTo('admin', 'staff'), getAllOrders)
-  .post(createOrder);
+router.route('/checkout-session').post(protect, getCheckoutSession);
+
+router.route('/').get(getAllOrders).post(createOrder);
 
 router.route('/:id').get(getOrder).delete(deleteOrder);
 

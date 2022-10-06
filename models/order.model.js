@@ -8,7 +8,7 @@ const orderSchema = new mongoose.Schema({
   },
   menuItems: [
     {
-      id: {
+      menuItem: {
         type: mongoose.Schema.ObjectId,
         ref: 'Menu',
         required: [true, 'Please provide item id!'],
@@ -35,7 +35,7 @@ const orderSchema = new mongoose.Schema({
   },
   orderedAt: {
     type: Date,
-    default: Date.now(),
+    default: new Date(),
   },
 });
 
@@ -44,8 +44,8 @@ orderSchema.pre(/^find/, function (next) {
     path: 'user',
     select: 'name address',
   }).populate({
-    path: 'menuItems.id',
-    select: 'name price',
+    path: 'menuItems.menuItem',
+    select: 'name price image',
   });
   next();
 });

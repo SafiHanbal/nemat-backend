@@ -67,7 +67,7 @@ exports.updateUser = catchAsync(async (req, res, next) => {
   const filteredBody = filterObj(req.body, 'name', 'address', 'phone', 'email');
 
   if (req.file)
-    filteredBody.photo = `http://127.0.0.1:8000/images/user/${req.file.filename}`;
+    filteredBody.photo = `https://nemat-hanbal.herokuapp.com/images/user/${req.file.filename}`;
 
   const user = await User.findByIdAndUpdate(id, filteredBody, {
     new: true,
