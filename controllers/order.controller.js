@@ -30,8 +30,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     customer_email: req.user.email,
     mode: 'payment',
     client_reference_id: req.user.id,
-    success_url: 'https://nemat-hanbal.herokuapp.com/me/orders',
-    cancel_url: 'https://nemat-hanbal.herokuapp.com/menu',
+    success_url: 'https://nemat-hanbal.netlify.app/me/orders',
+    cancel_url: 'https://nemat-hanbal.netlify.app/menu',
   });
 
   res.status(200).json({
